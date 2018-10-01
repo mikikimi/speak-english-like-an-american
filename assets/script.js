@@ -23,6 +23,22 @@ $(document).ready(function() {
     });
   });
 
+  $('#btnToggleAllExplain').on('click', function(){
+    let val = $(this).data('val');
+
+    if (val == 'hide') {
+      $('.explaination').hide();
+      $(this).data('val', 'show');
+    } else {
+      $('.explaination').show();
+      $(this).data('val', 'hide');
+    }
+  })
+
+  $('.toggle-explain').on('click', function(e) {
+    $(this).next().toggle();
+  });
+
   $('#btnReset').on('click', function() {
     $('[data-dublicate]').remove();
   });
@@ -30,7 +46,7 @@ $(document).ready(function() {
   $('#toEleForm').on('submit', function(e) {
     e.preventDefault();
     let num = $('#goToEl').val();
-    let el = $('ul')[num - 1];
+    let el = $('li')[num - 1];
     if (el) {
       $('html,body').animate({
         scrollTop: $(el).offset().top - 30
