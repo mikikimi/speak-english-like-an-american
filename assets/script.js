@@ -23,19 +23,35 @@ $(document).ready(function() {
     });
   });
 
+  $('#btnToggleAllUnit').on('click', function(){
+    let val = $(this).data('val');
+
+    if (val == 'hide') {
+      $('.unit-inner').show();
+      $(this).data('val', '');
+    } else {
+      $('.unit-inner').hide();
+      $(this).data('val', 'hide');
+    }
+  });
+
   $('#btnToggleAllExplain').on('click', function(){
     let val = $(this).data('val');
 
     if (val == 'hide') {
-      $('.explaination').hide();
-      $(this).data('val', 'show');
-    } else {
       $('.explaination').show();
+      $(this).data('val', '');
+    } else {
+      $('.explaination').hide();
       $(this).data('val', 'hide');
     }
-  })
+  });
 
   $('.toggle-explain').on('click', function(e) {
+    $(this).next().toggle();
+  });
+
+  $('h6').on('click', function(e) {
     $(this).next().toggle();
   });
 

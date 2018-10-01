@@ -50,22 +50,22 @@ li.title {
   text-align: center;
 }
 
-li.title h6,
+li h6,
 .toggle-explain {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
   text-align: center;
-}
-
-.toggle-explain {
-  font-style: italic;
   cursor: pointer;
   background: #eee;
   display: block;
   margin: 30px auto 0;
   padding: 7px 25px;
   width: 300px;
+}
+
+.toggle-explain {
+  font-style: italic;
 }
 
 p.number {
