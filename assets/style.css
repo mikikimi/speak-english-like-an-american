@@ -195,6 +195,15 @@ button.btn-close {
 }
 
 @media screen and (max-width: 840px) {
+  body {
+    padding: 0 15px;
+  }
+
+  li h6,
+  .toggle-explain {
+    width: 100%;
+  }
+
   .controls {
     position: static;
     width: 100%;
