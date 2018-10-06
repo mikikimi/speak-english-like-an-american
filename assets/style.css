@@ -194,7 +194,7 @@ button.btn-close {
   margin-top: 6px;
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 1240px) {
   body {
     padding: 0 15px;
   }
@@ -246,7 +246,20 @@ button.btn-close {
     display: none;
   }
 
-  .context img {
+  .context img,
+  .explaination img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .context img,
+  .explaination img {
     width: 100%;
+    max-width: 400px;
+    float: none;
+    margin: 0 auto;
   }
 }
