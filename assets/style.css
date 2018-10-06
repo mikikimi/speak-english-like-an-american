@@ -194,6 +194,24 @@ button.btn-close {
   margin-top: 6px;
 }
 
+.btn-media {
+  display: block;
+  width: 100%;
+  margin: 5px auto 0;
+}
+
+.btn-media .fa-pause {
+  display: none;
+}
+
+.btn-media.playing .fa-pause {
+  display: inline-block;
+}
+
+.btn-media.playing .fa-play {
+  display: none;
+}
+
 @media screen and (max-width: 1240px) {
   body {
     padding: 0 15px;
@@ -255,6 +273,7 @@ button.btn-close {
 
 
 @media screen and (max-width: 560px) {
+
   .context img,
   .explaination img {
     width: 100%;

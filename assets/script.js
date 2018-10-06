@@ -93,5 +93,41 @@ $(document).ready(function() {
     }
   });
 
+  let curPlaying = -1;
+  let audioState = 0;
+  let audioArr = $('audio');
+
+  $.each(audioArr, function(index) {
+    $(this).on('play', function() {
+      if (curPlaying != -1 && curPlaying != index) {
+        audioArr[curPlaying].pause();
+      }
+      setTimeout(function() {
+        $('#playPauseAudio').addClass('playing');
+        curPlaying = index;
+        audioState = 1;
+      }, 10);
+    });
+    $(this).on('pause', function() {
+      $('#playPauseAudio').removeClass('playing');
+      audioState = 0;
+    });
+  });
+
+  $('#playPauseAudio').on('click', function() {
+    if (audioState == 0) {
+      if (curPlaying == -1) {
+        curPlaying = 0;
+      }
+      audioArr[curPlaying].play();
+    } else {
+      $.each(audioArr, function() {
+        if (!this.paused) {
+          this.pause();
+        }
+      });
+    }
+  });
+
 
 });
